@@ -1,0 +1,48 @@
+<%- include('partials/header') %>
+
+<h1 class="mb-2"><i class="fa-solid fa-envelope"></i> Contact Me</h1>
+<p class="lead mb-4">Have a question or want to work together? Fill out the form below and I'll get back to you!</p>
+
+<section class="row">
+    <!-- form takes 8 of 12 columns on large screens, full width on smaller ones -->
+    <div class="col-lg-8">
+        <!-- form sends the message to my email using mailto; HTML5 validation checks each field -->
+        <form action="mailto:mahdey.hussain@ontariotechu.net" method="post" enctype="text/plain" name="contact_form">
+
+            <div class="mb-3">
+                <label for="fullname" class="form-label"><i class="fa-solid fa-user"></i> Full Name</label>
+                <input type="text" id="fullname" name="fullname" class="form-control"
+                    placeholder="Enter your full name" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label"><i class="fa-solid fa-at"></i> Email</label>
+                <input type="email" id="email" name="email" class="form-control"
+                    placeholder="Enter your email address" required>
+            </div>
+
+            <div class="mb-3">
+                <!-- pattern only accepts exactly 10 digits; syntax from W3Schools (cited in README) -->
+                <label for="phone" class="form-label"><i class="fa-solid fa-phone"></i> Cell No.</label>
+                <input type="tel" id="phone" name="phone" class="form-control" placeholder="e.g. 6471235890"
+                    pattern="[0-9]{10}" title="Enter a 10-digit phone number (numbers only)" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="comments" class="form-label"><i class="fa-solid fa-comment"></i> Message</label>
+                <textarea id="comments" name="comments" class="form-control" rows="6"
+                    placeholder="Question, comment or query..." required></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="robot" class="form-label"><i class="fa-solid fa-robot"></i> What is 2 + 2? (So I know you aren't a robot)</label>
+                <input type="number" id="robot" name="robot" class="form-control" min="4" max="4" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary me-2"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+            <button type="reset" class="btn btn-outline-secondary"><i class="fa-solid fa-rotate-left"></i> Clear Form</button>
+        </form>
+    </div>
+</section>
+
+<%- include('partials/footer') %>
