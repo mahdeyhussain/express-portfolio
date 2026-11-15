@@ -1,0 +1,112 @@
+/* app.css - my own styles, loaded after Bootstrap so they can override it */
+
+/* Colour scheme from Adobe Color ("Portfolio Colours"), reused from Assignment 1:
+   #1B2A41 deep navy     - navbar, footer, main headings
+   #324A5F steel blue    - sub-headings, navbar gradient
+   #CCC9DC grey-blue     - page background gradient
+   #EEF2F7 soft white    - page background gradient, light text
+   #F46036 burnt orange  - buttons, highlights, active link */
+
+/* page background: linear gradient from top to bottom */
+body {
+  color: #1B2A41;
+  background: #EEF2F7;
+  /* fallback colour if gradients aren't supported */
+  background: linear-gradient(to bottom, #CCC9DC 0%, #EEF2F7 100%);
+  background-attachment: fixed;
+  /* gradient stays put instead of repeating on long pages */
+}
+
+/* headings in the colour scheme */
+h1 {
+  color: #1B2A41;
+}
+
+h2,
+h3 {
+  color: #324A5F;
+}
+
+/* Font Awesome icons in headings get the orange accent */
+h1 i,
+h2 i,
+h3 i {
+  color: #F46036;
+}
+
+/* navbar: angled linear gradient at 45 degrees (replaces Bootstrap's bg-dark) */
+.site-nav {
+  background: #1B2A41;
+  /* fallback colour */
+  background: linear-gradient(45deg, #1B2A41 0%, #324A5F 100%);
+}
+
+/* nav links turn orange on hover, and the current page stays orange */
+.site-nav .nav-link:hover,
+.site-nav .nav-link.active {
+  color: #F46036;
+}
+
+/* footer: solid navy bar */
+.site-footer {
+  background-color: #1B2A41;
+  color: #EEF2F7;
+}
+
+.site-footer a {
+  color: #EEF2F7;
+}
+
+.site-footer a:hover {
+  color: #F46036;
+}
+
+/* Bootstrap 5.3 buttons read their colours from CSS variables,
+   so overriding the variables recolours every state (normal, hover, click) */
+.btn-primary {
+  --bs-btn-bg: #F46036;
+  --bs-btn-border-color: #F46036;
+  --bs-btn-color: #1B2A41;
+  --bs-btn-hover-bg: #1B2A41;
+  --bs-btn-hover-border-color: #1B2A41;
+  --bs-btn-hover-color: #EEF2F7;
+  --bs-btn-active-bg: #1B2A41;
+  --bs-btn-active-border-color: #1B2A41;
+  --bs-btn-active-color: #EEF2F7;
+  font-weight: bold;
+}
+
+.btn-outline-primary {
+  --bs-btn-color: #1B2A41;
+  --bs-btn-border-color: #1B2A41;
+  --bs-btn-hover-bg: #1B2A41;
+  --bs-btn-hover-border-color: #1B2A41;
+  --bs-btn-hover-color: #EEF2F7;
+  --bs-btn-active-bg: #1B2A41;
+  --bs-btn-active-color: #EEF2F7;
+  font-weight: bold;
+}
+
+/* cards: orange top border, and they lift up on hover
+   (transform and transition from the Week 4 lecture) */
+.card {
+  border-top: 4px solid #F46036;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 5px 5px 15px #324A5F;
+}
+
+/* photos get a navy border */
+.rounded-circle,
+.figure-img {
+  border: 4px solid #1B2A41;
+}
+
+/* form boxes get an orange glow instead of blue when clicked into */
+.form-control:focus {
+  border-color: #F46036;
+  box-shadow: 0 0 0 0.25rem rgba(244, 96, 54, 0.25);
+}
